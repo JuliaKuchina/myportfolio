@@ -1,5 +1,5 @@
 import { scaleOrdinal, scaleSqrt } from "d3-scale";
-import { interpolateRainbow } from "d3-scale-chromatic";
+import { drag } from "d3-drag";
 import {
   forceSimulation,
   forceManyBody,
@@ -7,16 +7,16 @@ import {
   forceY,
   forceCollide,
 } from "d3-force";
-import { quadtree as quadtreeD3 } from "d3-quadtree";
 import { max } from "d3-array";
 import { select, Selection } from "d3-selection";
 import { TECHNOLOGIES } from "./constants/projects";
 import { useEffect } from "react";
+import { makeGradients, printGradient } from "./helpers";
 
 export const TechChart = () => {
   // bubbleChart creation function; instantiate new bubble chart given a DOM element to display it in and a dataset to visualise
   function bubbleChart() {
-    const width = 940;
+    const width = 600;
     const height = 500;
 
     // location to centre the bubbles
@@ -36,18 +36,9 @@ export const TechChart = () => {
       return Math.pow(d.radius, 2.0) * 0.01;
     }
 
-    // set up colour scale
-    const fillColour = (group: number) => interpolateRainbow(group / 6);
-
-    // // set up colour scale
-    // const fillColour = scaleOrdinal()
-    //   .domain(["1", "2", "3", "5", "99"])
-    //   .range(["#0074D9", "#7FDBFF", "#39CCCC", "#3D9970", "#AAAAAA"]);
-
     // create a force simulation and add forces to it
     const simulation = forceSimulation()
       .force("charge", forceManyBody().strength(charge))
-      // .force('center', forceCenter(centre.x, centre.y))
       .force("x", forceX().strength(forceStrength).x(centre.x))
       .force("y", forceY().strength(forceStrength).y(centre.y))
       .force(
@@ -56,7 +47,7 @@ export const TechChart = () => {
       );
 
     // force simulation starts up automatically, which we don't want as there aren't any nodes yet
-    simulation.stop();
+    // simulation.stop();
 
     // data manipulation function takes raw data from csv and converts it into an array of node objects
     // each node will store data and visualisation values to draw a bubble
@@ -75,7 +66,7 @@ export const TechChart = () => {
         ...d,
         radius: radiusScale(+d.size),
         size: +d.size,
-        x: Math.random() * 900,
+        x: Math.random() * 200,
         y: Math.random() * 200,
       }));
 
@@ -88,6 +79,7 @@ export const TechChart = () => {
       // convert raw data into nodes data
       nodes = createNodes(rawData);
       svg = select(selector).attr("width", width).attr("height", height);
+      makeGradients(svg);
 
       // bind nodes data to circle elements
       const elements = svg
@@ -96,14 +88,35 @@ export const TechChart = () => {
         .data(nodes, (d: any) => d.id)
         .enter()
         .append("g")
-        .attr("class", "bubble-container");
+        .attr("class", "bubble-container")
+        .style("cursor", "pointer");
+
+      elements.call(
+        drag().on("drag", (event, d: any) => {
+          d.x = event.x;
+          d.y = event.y;
+          simulation.alpha(1).restart();
+        }) as any
+      );
+
+      // function update() {
+      //   voronoi = d3.Delaunay.from(
+      //     circles,
+      //     (d) => d.x,
+      //     (d) => d.y
+      //   ).voronoi([0, 0, width, height]);
+      //   circle.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+      //   cell.attr("d", (d, i) => voronoi.renderCell(i));
+      //   mesh.attr("d", voronoi.render());
+      // }
 
       bubbles = elements
         .append("circle")
         .classed("bubble", true)
         .attr("r", (d: any) => d.radius)
-        .attr("fill", (d: any) => fillColour(d.group) as any)
-        .attr("opacity", 0.75) as any;
+        // .attr("fill", (d: any) => fillColour(d.group) as any)
+        .style("fill", (d: any) => printGradient(d.group, 7) as any)
+        .attr("opacity", 1) as any;
 
       labels = elements
         .append("text")
@@ -112,7 +125,7 @@ export const TechChart = () => {
         .style("font-size", 14)
         .style("font-weight", 600)
         .style("white-space", "pre-line")
-        .style("fill", "#000000")
+        .style("fill", "#333")
         .text((d: any) => d.text) as any;
 
       // set simulation's nodes to our newly created nodes array

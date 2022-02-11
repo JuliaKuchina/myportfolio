@@ -36,5 +36,7 @@ export const StyledBox = styled.div`
   box-shadow: 0px 0px 60px 0px rgb(0 0 0 / 20%);
   margin: 100px auto;
   display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
+  justify-content: space-between;
 `;
