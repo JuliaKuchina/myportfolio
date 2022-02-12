@@ -22,10 +22,13 @@ const StyledContainer = styled.div`
   padding: 16px 24px 12px;
 `;
 const StyledCardTitle = styled.div`
-  font-weight: 600;
+  font-family: "Roboto Condensed";
+  font-size: 24px;
+  font-weight: 400;
 `;
 const StyledText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
+  color: #666;
 `;
 
 export const Card = ({

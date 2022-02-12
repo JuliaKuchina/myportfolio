@@ -2,7 +2,12 @@ import styled from "styled-components";
 import photo from "./assets/images/me.jpeg";
 import reactLogo from "./assets/images/logo.svg";
 import typescriptLogo from "./assets/images/typescript.svg";
-import { BORDER_RADIUS, ROTATE, FLOAT } from "./constants/style";
+import {
+  BORDER_RADIUS,
+  ROTATE,
+  FLOAT,
+  CONTAINER_WIDTH,
+} from "./constants/style";
 
 const StyledImageContainer = styled.div`
   width: 100%;
@@ -11,7 +16,7 @@ const StyledImageContainer = styled.div`
   min-height: 450px;
   position: relative;
   background-color: #3a3f5e;
-  background-color: #2d2766;
+  background-color: #3a3f5e;
   background-image: radial-gradient(
       white,
       rgba(255, 255, 255, 0.2) 2px,
@@ -26,6 +31,9 @@ const StyledImageContainer = styled.div`
     );
   background-size: 1000px 2000px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 150px 150px;
+  @media (max-width: ${CONTAINER_WIDTH}px) {
+    max-width: 100%;
+  }
 `;
 const StyledImageBorder = styled.div`
   position: absolute;

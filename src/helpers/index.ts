@@ -1,4 +1,11 @@
-import { Selection } from "d3-selection";
+import { BaseType, Selection } from "d3-selection";
+import {
+  forceSimulation,
+  forceManyBody,
+  forceX,
+  forceY,
+  forceCollide,
+} from "d3-force";
 
 export const makeGradient = ({
   svg,
@@ -20,19 +27,20 @@ export const makeGradient = ({
     .attr("x2", "0%")
     .attr("y1", "0%")
     .attr("y2", "100%"); //since its a vertical linear gradient
+
   lg.append("stop")
     .attr("offset", "0%")
-    .style("stop-color", startColor) //end in red
+    .style("stop-color", startColor)
     .style("stop-opacity", 1);
 
   lg.append("stop")
     .attr("offset", "100%")
-    .style("stop-color", endColor) //start in blue
+    .style("stop-color", endColor)
     .style("stop-opacity", 1);
 };
 
 export const makeGradients = (
-  svg: Selection<any, unknown, null, undefined>
+  svg: Selection<BaseType, unknown, HTMLElement, any>
 ) => {
   makeGradient({
     svg,
@@ -81,4 +89,24 @@ export const printGradient = (group: number, maxGroupNumber: number) => {
       return "url(#black)";
   }
   return;
+};
+
+// charge is dependent on size of the bubble, so bigger towards the middle
+export function charge(d: any) {
+  return Math.pow(d.radius, 2.0) * 0.001;
+}
+
+// create a force simulation and add forces to it
+export const makeSimulation = (
+  centre: { x: number; y: number },
+  forceStrength: number
+) => {
+  return forceSimulation()
+    .force("charge", forceManyBody().strength(charge))
+    .force("x", forceX().strength(forceStrength).x(centre.x))
+    .force("y", forceY().strength(forceStrength).y(centre.y))
+    .force(
+      "collision",
+      forceCollide().radius((d: any) => d.radius + 1)
+    );
 };

@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const TECHNOLOGIES: Technology[] = [
-  { text: "JavaScript", size: 4, group: 1 },
+  { text: "JavaScript", size: 5, group: 1 },
   { text: "Typescript", size: 8, group: 1 },
   { text: "PHP", size: 1, group: 1 },
   { text: "SQL", size: 1, group: 1 },
@@ -155,7 +155,7 @@ export const TECHNOLOGIES: Technology[] = [
 
   { text: "styled", size: 5, group: 7 },
   { text: "Material UI", size: 5, group: 7 },
-  { text: "Bootstrap", size: 3, group: 7 },
+  { text: "Bootstrap", size: 4, group: 7 },
   { text: "SVG", size: 2, group: 7 },
   { text: "PostCSS", size: 3, group: 7 },
   { text: "SASS", size: 2, group: 7 },
@@ -166,7 +166,7 @@ export const TECHNOLOGIES: Technology[] = [
   { text: "Apollo", size: 2, group: 3 },
   { text: "GraphQL", size: 5, group: 3 },
   { text: "REST", size: 4, group: 3 },
-  { text: "MySQL", size: 1.5, group: 4 },
+  { text: "MySQL", size: 2, group: 4 },
   { text: "Oracle", size: 1.5, group: 4 },
   { text: "Firebase", size: 3, group: 4 },
   { text: "Webpack", size: 3.5, group: 4 },

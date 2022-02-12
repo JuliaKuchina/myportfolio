@@ -3,6 +3,7 @@ import { Welcome } from "./Welcome";
 import { PROJECTS } from "./constants/projects";
 import { Card } from "./Card";
 import { About } from "./About";
+import { ColorPills } from "./ColorPills";
 import { CONTAINER_WIDTH } from "./constants/style";
 
 const StyledAppContainer = styled.div``;
@@ -19,10 +20,11 @@ function App() {
   return (
     <StyledAppContainer>
       <Welcome />
+      <ColorPills />
       <About />
       <CardFlexContainer>
         {PROJECTS.map((project) => (
-          <Card project={project} />
+          <Card key={project.title} project={project} />
         ))}
       </CardFlexContainer>
     </StyledAppContainer>
