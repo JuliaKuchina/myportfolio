@@ -9,7 +9,7 @@ export const ROTATE = keyframes`
   }
 
   50% {
-    transform: rotate(180deg) scale(1.8);
+    transform: rotate(180deg) scale(1.2);
   }
 
   100% {
@@ -19,15 +19,15 @@ export const ROTATE = keyframes`
 
 export const FLOAT = keyframes`
   0% {
-    transform: translateY(5px);
+    transform: translateY(3px);
   }
 
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 
   100% {
-    transform: translateY(5px);
+    transform: translateY(3px);
   }`;
 
 export const StyledBox = styled.div`
@@ -73,4 +73,12 @@ export const StyledRainbowSpan = styled.span`
 export const StyledParagraph = styled.p`
   font-size: 14px;
   color: #555;
+`;
+
+export const StyledH2 = styled.h2`
+  font-family: "Roboto Condensed";
+  color: #3a3f5e;
+  font-weight: 400;
+  font-size: 55px;
+  margin: 12px 0 8px;
 `;

@@ -69,11 +69,14 @@ export function ColorPills() {
         </StyledHeader>
         React Experience
       </StyledWhitePill>
-      <StyledPill startColor="#16a085" endColor="#f4d03f" angle="-60deg">
+      {/* <StyledPill startColor="#16a085" endColor="#f4d03f" angle="-60deg"> */}
+
+      {/* </StyledPill> */}
+      <StyledPill startColor="#fa709a" endColor="#fee140" angle="90deg">
         <StyledHeader>INTERESTS</StyledHeader>
         Maps, 3D, Data-Visualisations
       </StyledPill>
-      <StyledPill startColor="#fa709a" endColor="#fee140" angle="90deg">
+      <StyledPill startColor="#9e78fb" endColor="#61dafb" angle="60deg">
         <StyledHeader>MASTER OF</StyledHeader>
         Maths & Computer Science
       </StyledPill>

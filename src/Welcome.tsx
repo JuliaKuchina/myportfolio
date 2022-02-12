@@ -4,6 +4,7 @@ import {
   BORDER_RADIUS,
   CONTAINER_WIDTH,
   StyledBox,
+  StyledH2,
   StyledParagraph,
   StyledRainbowSpan,
 } from "./constants/style";
@@ -70,11 +71,10 @@ export function Welcome() {
     <StyledBox>
       <StyledContainer>
         <div>
-          <StyledHeader>YULIA KUCHINA</StyledHeader>
+          <StyledH2>YULIA KUCHINA</StyledH2>
           <StyledSubHeader>Senior Front End Developer</StyledSubHeader>
           <StyledParagraph>
-            To contact me, please, download my resume with all contact info
-            available.
+            Contact info is in my resume.
             <br />
             P.S. Yes, you can drag and move the bubbles around :)
           </StyledParagraph>

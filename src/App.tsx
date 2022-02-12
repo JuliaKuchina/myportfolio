@@ -4,30 +4,36 @@ import { PROJECTS } from "./constants/projects";
 import { Card } from "./Card";
 import { About } from "./About";
 import { ColorPills } from "./ColorPills";
-import { CONTAINER_WIDTH } from "./constants/style";
+import { CONTAINER_WIDTH, StyledH2 } from "./constants/style";
 
-const StyledAppContainer = styled.div``;
+const StyledAppContainer = styled.div`
+  max-width: ${CONTAINER_WIDTH}px;
+  margin: 100px auto;
+  text-align: center;
+`;
 
 const CardFlexContainer = styled.div`
-  max-width: ${CONTAINER_WIDTH + 36}px;
-  margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 function App() {
   return (
-    <StyledAppContainer>
+    <div>
       <Welcome />
       <ColorPills />
       <About />
-      <CardFlexContainer>
-        {PROJECTS.map((project) => (
-          <Card key={project.title} project={project} />
-        ))}
-      </CardFlexContainer>
-    </StyledAppContainer>
+      <StyledAppContainer>
+        <StyledH2>MY PROJECTS</StyledH2>
+        <CardFlexContainer>
+          {PROJECTS.map((project) => (
+            <Card key={project.title} project={project} />
+          ))}
+        </CardFlexContainer>
+      </StyledAppContainer>
+    </div>
   );
 }
 

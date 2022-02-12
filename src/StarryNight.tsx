@@ -37,10 +37,10 @@ const StyledImageContainer = styled.div`
 `;
 const StyledImageBorder = styled.div`
   position: absolute;
-  top: 80px;
-  left: 80px;
-  width: 180px;
-  height: 180px;
+  top: 50px;
+  right: 10%;
+  width: 250px;
+  height: 250px;
   padding: ${BORDER_RADIUS / 1.5}px;
   border-radius: 50%;
   animation: ${FLOAT} 6s infinite;
@@ -50,6 +50,7 @@ const StyledImageBorder = styled.div`
     rgba(213, 34, 122, 1) 0%,
     rgba(246, 157, 136, 1) 100%
   );
+  transform: translateX(-80%);
 `;
 const StyledImage = styled.img`
   width: 100%;
@@ -58,10 +59,10 @@ const StyledImage = styled.img`
 `;
 const StyledReactLogo = styled.img`
   position: absolute;
-  bottom: 70px;
-  left: 50px;
+  bottom: 90px;
+  right: 270px;
   width: 130px;
-  animation: ${ROTATE} 10s infinite;
+  animation: ${ROTATE} 15s infinite;
 `;
 const StyledTypescriptLogo = styled.img`
   position: absolute;
@@ -73,8 +74,8 @@ const StyledTypescriptLogo = styled.img`
 
 const StyledCss = styled.div`
   position: absolute;
-  right: 30px;
-  top: 80px;
+  right: 170px;
+  bottom: 60px;
   font-size: 36px;
   font-weight: 600;
   background: rgb(251, 228, 131);
@@ -91,8 +92,8 @@ const StyledCss = styled.div`
 
 const StyledHtml = styled.div`
   position: absolute;
-  right: 30px;
-  top: 40px;
+  right: 170px;
+  bottom: 20px;
   font-size: 40px;
   font-weight: 600;
   color: rgba(251, 228, 131, 1);

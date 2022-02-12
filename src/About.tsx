@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { CONTAINER_WIDTH, StyledBox, StyledParagraph } from "./constants/style";
+import {
+  CONTAINER_WIDTH,
+  StyledBox,
+  StyledH2,
+  StyledParagraph,
+} from "./constants/style";
 import { StarryNight } from "./StarryNight";
 
 const StyledText = styled.div`
@@ -15,21 +20,13 @@ const StyledText = styled.div`
   }
 `;
 
-export const StyledHeader = styled.h2`
-  font-family: "Roboto Condensed";
-  color: #3a3f5e;
-  font-weight: 400;
-  font-size: 55px;
-  margin: 12px 0 8px;
-`;
-
 export function About() {
   return (
     <StyledBox>
       <StarryNight />
       <StyledText>
         <div>
-          <StyledHeader>ABOUT</StyledHeader>
+          <StyledH2>ABOUT</StyledH2>
           <StyledParagraph>
             React • React Native • Redux • Typescript • GraphQL • REST •
             Material-UI • D3 • Three.js • ...
