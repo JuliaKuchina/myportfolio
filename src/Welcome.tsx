@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import linkedIn from "./assets/images/linkedIn.svg";
+import download from "./assets/images/download.svg";
 import { TechChart } from "./Chart";
 import {
   BORDER_RADIUS,
@@ -8,6 +10,7 @@ import {
   StyledParagraph,
   StyledRainbowSpan,
 } from "./constants/style";
+import { ContactMe } from "./Contact";
 
 const StyledContainer = styled.div`
   padding: 50px;
@@ -28,13 +31,6 @@ const StyledSubHeader = styled.h2`
   font-weight: normal;
 `;
 
-const StyledHeader = styled.h1`
-  font-family: "Roboto Condensed";
-  font-weight: 400;
-  font-size: 40px;
-  margin: 16px 0 8px;
-`;
-
 const StyledLink = styled.a`
   color: #555;
   background: white;
@@ -43,6 +39,7 @@ const StyledLink = styled.a`
   text-decoration: none;
   border-radius: ${BORDER_RADIUS * 2}px;
   display: block;
+  cursor: pointer;
 `;
 
 const StyledLinkContainer = styled.div`
@@ -66,6 +63,10 @@ const StyledLinkContainer = styled.div`
   background-position: center center;
 `;
 
+const StyledImage = styled.img`
+  width: 20px;
+`;
+
 export function Welcome() {
   return (
     <StyledBox>
@@ -74,9 +75,8 @@ export function Welcome() {
           <StyledH2>YULIA KUCHINA</StyledH2>
           <StyledSubHeader>Senior Front End Developer</StyledSubHeader>
           <StyledParagraph>
-            Contact info is in my resume. <i className="fa fa-download" />
-            <br />
-            P.S. Yes, you can drag and move the bubbles around :)
+            Contact info is in my resume. <br />
+            P.S. Yes, feel free to drag and move the bubbles around :)
           </StyledParagraph>
         </div>
         <StyledLinkContainer>

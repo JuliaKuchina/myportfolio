@@ -7,6 +7,7 @@ import {
   ROTATE,
   FLOAT,
   CONTAINER_WIDTH,
+  StyledRainbowSpan,
 } from "./constants/style";
 
 const StyledImageContainer = styled.div`
@@ -126,11 +127,7 @@ export function StarryNight() {
       <StyledTypescriptLogo src={typescriptLogo} alt="typescript" />
       <StyledCss>CSS4</StyledCss>
       <StyledHtml>
-        <span>H</span>
-        <span>T</span>
-        <span>M</span>
-        <span>L</span>
-        <span>5</span>
+        <StyledRainbowSpan>HTML</StyledRainbowSpan>
       </StyledHtml>
     </StyledImageContainer>
   );

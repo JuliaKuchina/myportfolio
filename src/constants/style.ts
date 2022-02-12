@@ -82,3 +82,10 @@ export const StyledH2 = styled.h2`
   font-size: 55px;
   margin: 12px 0 8px;
 `;
+
+export const StyledIcon = styled.img`
+  padding-right: 16px;
+  & img:first-child {
+    padding-top: 20px;
+  }
+`;
