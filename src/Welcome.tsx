@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import linkedIn from "./assets/images/linkedIn.svg";
-import download from "./assets/images/download.svg";
 import { TechChart } from "./Chart";
 import {
   BORDER_RADIUS,
@@ -10,7 +8,6 @@ import {
   StyledParagraph,
   StyledRainbowSpan,
 } from "./constants/style";
-import { ContactMe } from "./Contact";
 
 const StyledContainer = styled.div`
   padding: 50px;
@@ -61,10 +58,6 @@ const StyledLinkContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-`;
-
-const StyledImage = styled.img`
-  width: 20px;
 `;
 
 export function Welcome() {

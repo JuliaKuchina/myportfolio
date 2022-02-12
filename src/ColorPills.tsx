@@ -69,7 +69,9 @@ export function ColorPills() {
         </StyledHeader>
         React Experience
       </StyledWhitePill>
-      <StyledPill startColor="#fa709a" endColor="#fee140" angle="90deg">
+
+      <StyledPill startColor="#16a085" endColor="#afeaa6" angle="20deg">
+        {/* <StyledPill startColor="#fa709a" endColor="#fee140" angle="90deg"> */}
         <StyledHeader>INTERESTS</StyledHeader>
         Maps, 3D, Data-Visualisations
       </StyledPill>
