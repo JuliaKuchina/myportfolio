@@ -3,7 +3,7 @@ import {
   BORDER_RADIUS,
   CONTAINER_WIDTH,
   StyledRainbowSpan,
-} from "./constants/style";
+} from "./helpers/style";
 
 const StyledPill = styled.div<{
   startColor: string;
@@ -34,15 +34,19 @@ const StyledPillContainer = styled.a`
   cursor: pointer;
   font-family: "Roboto Condensed";
   font-size: 36px;
-  @media (max-width: ${CONTAINER_WIDTH}px) {
-    width: 100%;
-    margin: 10px 0;
-  }
   &:first-child {
     width: calc(40% - 16px);
+    @media (max-width: ${CONTAINER_WIDTH}px) {
+      width: 100%;
+      margin: 10px 0;
+    }
   }
   &:last-child {
     width: calc(60% - 16px);
+    @media (max-width: ${CONTAINER_WIDTH}px) {
+      width: 100%;
+      margin: 10px 0;
+    }
   }
 `;
 
@@ -64,6 +68,9 @@ const StyledContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: ${CONTAINER_WIDTH}px) {
+    flex-direction: column;
+  }
 `;
 
 export function Contacts() {
@@ -78,7 +85,10 @@ export function Contacts() {
           LinkedIn
         </StyledPill>
       </StyledPillContainer>
-      <StyledPillContainer download href="./YuliaKuchinaResume.pdf">
+      <StyledPillContainer
+        download
+        href="./YuliaKuchinaFrontendEngineerResume.pdf"
+      >
         <StyledWhitePill>
           <StyledRainbowSpan>Download resume</StyledRainbowSpan>
         </StyledWhitePill>

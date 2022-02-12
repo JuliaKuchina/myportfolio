@@ -1,13 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { scaleSqrt } from "d3-scale";
 import { drag } from "d3-drag";
 import { max } from "d3-array";
 import { select, Selection } from "d3-selection";
-import { TECHNOLOGIES } from "./constants/projects";
+import { TECHNOLOGIES } from "./helpers/projects";
 import { makeGradients, printGradient, makeSimulation } from "./helpers";
+import { useWindowSize } from "./helpers/hooks";
 
 export const TechChart = () => {
-  const width = 600;
+  const { width: windowWidth } = useWindowSize();
+  const width = useMemo(
+    () => (windowWidth < 600 ? windowWidth : 600),
+    [windowWidth]
+  );
   const height = 500;
   const centre = { x: width / 2, y: height / 2 };
   const forceStrength = 0.03;

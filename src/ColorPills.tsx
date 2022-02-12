@@ -4,7 +4,7 @@ import {
   CONTAINER_WIDTH,
   StyledHeader,
   StyledRainbowSpan,
-} from "./constants/style";
+} from "./helpers/style";
 
 const StyledPill = styled.div<{
   startColor: string;

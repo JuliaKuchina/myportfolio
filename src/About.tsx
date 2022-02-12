@@ -4,7 +4,7 @@ import {
   StyledBox,
   StyledH2,
   StyledParagraph,
-} from "./constants/style";
+} from "./helpers/style";
 import { StarryNight } from "./StarryNight";
 
 const StyledText = styled.div`

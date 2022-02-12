@@ -8,7 +8,7 @@ import {
   FLOAT,
   CONTAINER_WIDTH,
   StyledRainbowSpan,
-} from "./constants/style";
+} from "./helpers/style";
 
 const StyledImageContainer = styled.div`
   width: 100%;

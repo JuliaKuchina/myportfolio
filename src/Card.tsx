@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BORDER_RADIUS } from "./constants/style";
+import { BORDER_RADIUS } from "./helpers/style";
 import { Project } from "./types";
 
 const StyledCard = styled.a`
@@ -13,6 +13,9 @@ const StyledCard = styled.a`
   transition: 0.3s;
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 688px) {
+    width: 100%;
   }
 `;
 const StyledImage = styled.img`

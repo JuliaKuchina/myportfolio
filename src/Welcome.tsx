@@ -7,7 +7,7 @@ import {
   StyledH2,
   StyledParagraph,
   StyledRainbowSpan,
-} from "./constants/style";
+} from "./helpers/style";
 
 const StyledContainer = styled.div`
   padding: 50px;
@@ -18,6 +18,7 @@ const StyledContainer = styled.div`
   justify-content: space-between;
   @media (max-width: ${CONTAINER_WIDTH}px) {
     max-width: 100%;
+    padding: 50px 24px;
   }
 `;
 
@@ -73,7 +74,7 @@ export function Welcome() {
           </StyledParagraph>
         </div>
         <StyledLinkContainer>
-          <StyledLink download href="./YuliaKuchinaResume.pdf">
+          <StyledLink download href="./YuliaKuchinaFrontendEngineerResume.pdf">
             <StyledRainbowSpan>Download resume</StyledRainbowSpan>
           </StyledLink>
         </StyledLinkContainer>

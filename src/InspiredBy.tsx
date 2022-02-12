@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import {
+  CONTAINER_WIDTH,
   StyledBox,
   StyledH2,
   StyledParagraph,
   StyledRainbowSpan,
-} from "./constants/style";
+} from "./helpers/style";
 
 const StyledContainer = styled.div`
   padding: 50px;
   width: 100%;
+  @media (max-width: ${CONTAINER_WIDTH}px) {
+    padding: 16px;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -28,12 +32,12 @@ export function InspiredBy() {
           <StyledLink href="https://acerarbuckle.com/" target="_blank">
             <StyledRainbowSpan>Acer Arbuckle</StyledRainbowSpan>
           </StyledLink>
-          and my favourite data-visualisation library
+          <br />
+          My favourite data-visualisation library
           <StyledLink href="https://d3js.org/" target="_blank">
             <StyledRainbowSpan>D3</StyledRainbowSpan>
           </StyledLink>
-        </StyledParagraph>
-        <StyledParagraph>
+          <br />
           Typescript logo
           <StyledLink href="http://www.onlinewebfonts.com">
             <StyledRainbowSpan>oNline Web Fonts</StyledRainbowSpan>

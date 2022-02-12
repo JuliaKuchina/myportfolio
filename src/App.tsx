@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Welcome } from "./Welcome";
-import { PROJECTS } from "./constants/projects";
+import { PROJECTS } from "./helpers/projects";
 import { Card } from "./Card";
 import { About } from "./About";
 import { ColorPills } from "./ColorPills";
-import { CONTAINER_WIDTH, StyledH2 } from "./constants/style";
+import { CONTAINER_WIDTH, StyledH2 } from "./helpers/style";
 import { InspiredBy } from "./InspiredBy";
 import { Contacts } from "./Contacts";
 
