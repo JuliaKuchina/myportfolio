@@ -25,6 +25,7 @@ const StyledCardTitle = styled.div`
   font-family: "Roboto Condensed";
   font-size: 24px;
   font-weight: 400;
+  text-align: center;
 `;
 const StyledText = styled.p`
   font-size: 14px;

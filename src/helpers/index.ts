@@ -45,7 +45,7 @@ export const makeGradients = (
   makeGradient({
     svg,
     startColor: "#16a085",
-    endColor: "#f4d03f",
+    endColor: "#afeaa6",
     ind: "greenGradient",
   });
   makeGradient({

@@ -12,13 +12,6 @@ import {
 const StyledContainer = styled.div`
   padding: 50px;
   width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media (max-width: ${CONTAINER_WIDTH}px) {
-    max-width: 100%;
-  }
 `;
 
 const StyledSubHeader = styled.h2`
@@ -36,13 +29,10 @@ const StyledHeader = styled.h1`
 `;
 
 const StyledLink = styled.a`
-  color: #555;
-  background: white;
   font-size: 16px;
   padding: 16px;
   text-decoration: none;
-  border-radius: ${BORDER_RADIUS * 2}px;
-  display: block;
+  text-transform: uppercase;
 `;
 
 const StyledLinkContainer = styled.div`
@@ -66,26 +56,23 @@ const StyledLinkContainer = styled.div`
   background-position: center center;
 `;
 
-export function Welcome() {
+export function InspiredBy() {
   return (
     <StyledBox>
       <StyledContainer>
-        <div>
-          <StyledH2>YULIA KUCHINA</StyledH2>
-          <StyledSubHeader>Senior Front End Developer</StyledSubHeader>
-          <StyledParagraph>
-            Contact info is in my resume. <i className="fa fa-download" />
-            <br />
-            P.S. Yes, you can drag and move the bubbles around :)
-          </StyledParagraph>
-        </div>
-        <StyledLinkContainer>
-          <StyledLink download href="./YuliaKuchinaResume.pdf">
-            <StyledRainbowSpan>Download resume</StyledRainbowSpan>
+        <StyledH2>Inspired By</StyledH2>
+        <StyledParagraph>
+          Beautiful website by
+          <StyledLink href="https://acerarbuckle.com/" target="_blank">
+            <StyledRainbowSpan>Acer Arbuckle</StyledRainbowSpan>
           </StyledLink>
-        </StyledLinkContainer>
+          and my favourite data-visualisation library
+          <StyledLink href="https://d3js.org/" target="_blank">
+            <StyledRainbowSpan>D3</StyledRainbowSpan>
+          </StyledLink>
+        </StyledParagraph>
+        <StyledParagraph></StyledParagraph>
       </StyledContainer>
-      <TechChart />
     </StyledBox>
   );
 }

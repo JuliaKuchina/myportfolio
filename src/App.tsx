@@ -5,10 +5,11 @@ import { Card } from "./Card";
 import { About } from "./About";
 import { ColorPills } from "./ColorPills";
 import { CONTAINER_WIDTH, StyledH2 } from "./constants/style";
+import { InspiredBy } from "./InspiredBy";
 
 const StyledAppContainer = styled.div`
   max-width: ${CONTAINER_WIDTH}px;
-  margin: 100px auto;
+  margin: 100px auto 25px;
   text-align: center;
 `;
 
@@ -16,7 +17,8 @@ const CardFlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 25px;
+  text-align: left;
 `;
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           ))}
         </CardFlexContainer>
       </StyledAppContainer>
+      <InspiredBy />
     </div>
   );
 }
