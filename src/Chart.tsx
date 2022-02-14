@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { scaleSqrt } from "d3-scale";
 import { drag } from "d3-drag";
 import { max } from "d3-array";
@@ -8,7 +8,7 @@ import { makeGradients, printGradient, makeSimulation } from "./helpers";
 import { useWindowSize } from "./helpers/hooks";
 
 export const TechChart = () => {
-  const { width: windowWidth } = useWindowSize();
+  const windowWidth = useWindowSize();
   const width = useMemo(
     () => (windowWidth < 600 ? windowWidth : 600),
     [windowWidth]
@@ -60,8 +60,8 @@ export const TechChart = () => {
 
       return myNodes;
     }
-    // // main entry point to bubble chart, returned by parent closure
-    // // prepares rawData for visualisation and adds an svg element to the provided selector and starts the visualisation process
+    // main entry point to bubble chart, returned by parent closure
+    // prepares rawData for visualisation and adds an svg element to the provided selector and starts the visualisation process
     const chart = () => {
       if (!svgRef.current) {
         return;
@@ -113,6 +113,6 @@ export const TechChart = () => {
     // function called once promise is resolved and data is loaded from csv
     // calls bubble chart function to display inside #vis div
     chart();
-  });
+  }, [simulation]);
   return <svg ref={svgRef} id="tech-chart" width={width} height={height} />;
 };
