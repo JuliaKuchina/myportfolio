@@ -78,13 +78,13 @@ export const PROJECTS: Project[] = [
     link: "https://codepen.io/JKuchina/full/zwBaOM/",
     image: "assets/images/gameoflife.jpg",
     title: "Game Of Life",
-    info: "React, Javascript, Bootstrap,HTML, SASS, CSS",
+    info: "React, Javascript, Bootstrap, HTML, SASS, CSS",
   },
   {
     link: "https://codepen.io/JKuchina/pen/RpRzeo",
     image: "assets/images/recipebox.jpg",
     title: "Recipe Box",
-    info: "React, Javascript, Bootstrap,HTML, SASS, CSS",
+    info: "React, Javascript, Bootstrap, HTML, SASS, CSS",
   },
   {
     link: "https://codepen.io/JKuchina/full/vKaPaO/",

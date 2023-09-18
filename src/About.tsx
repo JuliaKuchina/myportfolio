@@ -20,6 +20,16 @@ const StyledText = styled.div`
   }
 `;
 
+const COMPANIES = [
+  "Rural Fire Service NSW",
+  "Revenue NSW",
+  "ABC",
+  "Centennial Coal",
+  "Kablamo",
+  "Anditi",
+  "Polemos",
+];
+
 export function About() {
   return (
     <StyledBox>
@@ -29,15 +39,21 @@ export function About() {
           <StyledH2>ABOUT</StyledH2>
           <StyledParagraph>
             React • React Native • Redux • Typescript • GraphQL • REST •
-            Material-UI • D3 • Three.js • ...
+            Material-UI • D3 • Three.js • Web3 ...
           </StyledParagraph>
         </div>
         <StyledParagraph>
           I am a React & React Native developer with a passion for front-end
           projects, clean code, functional programming and data visualisations.
-          I have 4 years of React + Typescript experience, 8 years of experience
+          I have 5 years of React + Typescript experience, 9 years of experience
           in web development and a master's degree in mathematics and computer
           science.
+        </StyledParagraph>
+        <StyledParagraph>
+          {" "}
+          I have an extensive experience in building web applications for both
+          desktop and mobile devices. I worked on projects for companies like{" "}
+          <b>{COMPANIES.join(", ")}</b> and others.
         </StyledParagraph>
       </StyledText>
     </StyledBox>

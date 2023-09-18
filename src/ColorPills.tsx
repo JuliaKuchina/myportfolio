@@ -60,12 +60,12 @@ export function ColorPills() {
   return (
     <StyledContainer>
       <StyledPill startColor="#9e78fb" endColor="#e481c6" angle="0deg">
-        <StyledHeader>8 YEARS</StyledHeader>
+        <StyledHeader>9 YEARS</StyledHeader>
         Web Experience
       </StyledPill>
       <StyledWhitePill>
         <StyledHeader>
-          <StyledRainbowSpan>4 YEARS</StyledRainbowSpan>
+          <StyledRainbowSpan>5 YEARS</StyledRainbowSpan>
         </StyledHeader>
         React Experience
       </StyledWhitePill>

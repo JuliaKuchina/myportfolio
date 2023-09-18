@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { scaleSqrt } from "d3-scale";
 import { drag } from "d3-drag";
 import { max } from "d3-array";
