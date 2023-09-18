@@ -20,7 +20,7 @@ const StyledText = styled.div`
   }
 `;
 
-const COMPANIES = [
+const COMPANIES: string[] = [
   "Rural Fire Service NSW",
   "Revenue NSW",
   "ABC",
@@ -31,6 +31,7 @@ const COMPANIES = [
 ];
 
 export function About() {
+  const format = new Intl.ListFormat();
   return (
     <StyledBox>
       <StarryNight />
@@ -50,10 +51,9 @@ export function About() {
           science.
         </StyledParagraph>
         <StyledParagraph>
-          {" "}
-          I have an extensive experience in building web applications for both
-          desktop and mobile devices. I worked on projects for companies like{" "}
-          <b>{COMPANIES.join(", ")}</b> and others.
+          I have extensive experience building web applications for both desktop
+          and mobile devices. I worked on projects for companies like{" "}
+          <b>{format.format(COMPANIES)}</b>.
         </StyledParagraph>
       </StyledText>
     </StyledBox>
