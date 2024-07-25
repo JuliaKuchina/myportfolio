@@ -21,6 +21,7 @@ const StyledText = styled.div`
 `;
 
 const COMPANIES: string[] = [
+  "Big W",
   "Rural Fire Service NSW",
   "Revenue NSW",
   "ABC",
@@ -32,6 +33,7 @@ const COMPANIES: string[] = [
 
 export function About() {
   const format = new Intl.ListFormat();
+  const reactYears = new Date().getFullYear() - 2017;
   return (
     <StyledBox>
       <StarryNight />
@@ -39,16 +41,17 @@ export function About() {
         <div>
           <StyledH2>ABOUT</StyledH2>
           <StyledParagraph>
-            React • React Native • Redux • Typescript • GraphQL • REST •
-            Material-UI • D3 • Three.js • Web3 ...
+            React • React Native • Typescript • GraphQL • REST • Azure • Github
+            Actions • Styled Components • Emotion • Material-UI • D3 • Three.js
+            • Web3 • Cypress ...
           </StyledParagraph>
         </div>
         <StyledParagraph>
           I am a React & React Native developer with a passion for front-end
           projects, clean code, functional programming and data visualisations.
-          I have 5 years of React + Typescript experience, 9 years of experience
-          in web development and a master's degree in mathematics and computer
-          science.
+          I have {reactYears} years of React + Typescript experience, more than
+          10 years of experience in web development and a master's degree in
+          mathematics and computer science.
         </StyledParagraph>
         <StyledParagraph>
           I have extensive experience building web applications for both desktop

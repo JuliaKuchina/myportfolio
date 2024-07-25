@@ -57,15 +57,16 @@ const StyledContainer = styled.div`
 `;
 
 export function ColorPills() {
+  const reactYears = new Date().getFullYear() - 2017;
   return (
     <StyledContainer>
       <StyledPill startColor="#9e78fb" endColor="#e481c6" angle="0deg">
-        <StyledHeader>9 YEARS</StyledHeader>
+        <StyledHeader>{reactYears + 3} YEARS</StyledHeader>
         Web Experience
       </StyledPill>
       <StyledWhitePill>
         <StyledHeader>
-          <StyledRainbowSpan>5 YEARS</StyledRainbowSpan>
+          <StyledRainbowSpan>{reactYears} YEARS</StyledRainbowSpan>
         </StyledHeader>
         React Experience
       </StyledWhitePill>
